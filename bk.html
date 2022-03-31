@@ -1,49 +1,83 @@
-<section class="book_section ">
-   <div class="container">
-     <div class="row">
-       <div class="col">
-         <div class="heading_container1">
-           <h2>
-             Unde doresti sa mergi?
-           </h2>
-           <p>
-             Daca nu apare un pachet turistic mai jos noi iti putem crea unul dupa dorintele dumneavoastra!
-           </p>
-         </div>
-         <form>
-           <div class="form-row ">
-             <div class="form-group col-lg-4">
-               <label for="inputAddress1">Tara</label>
-               <input type="text" class="form-control" id="inputAddress1" placeholder="Australia">
-             </div>
-             <div class="form-group col-lg-4">
-               <label for="inputAddress2">Zona</label>
-               <input type="text" class="form-control" id="inputAddress2" placeholder="Sydeny">
-             </div>
-             <div class="form-group col-lg-4">
-               <label for="inputEmail4">Email</label>
-               <input type="email" class="form-control" id="inputEmail4">
-             </div>
-           </div>
-           <div class="form-row ">
-             <div class="form-group col-lg-4">
-               <label for="inputDate">Data</label>
-               <input type="date" class="form-control" id="inputDate" placeholder="12/12/12">
-             </div>
-             <div class="form-group col-lg-4">
-               <label for="inputPrice">Numar persoane</label>
-               <input type="text" class="form-control" id="inputPrice" placeholder="10">
-             </div>
-             <div class="form-group col-lg-4">
-               <label for="inputPhone">Numar de telefon</label>
-               <input type="text" class="form-control" id="inputPhone">
-             </div>
-           </div>
-           <div class="d-flex justify-content-center">
-             <button type="submit" class="btn ">Comanda acum</button>
-           </div>
-         </form>
-       </div>
-     </div>
-   </div>
- </section>
+<head>
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
+  <script src="https://api.tomtom.com/maps-sdk-for-web/6.x/6.18.0//examples/pages/examples/assets/js/mobile-or-tablet.js"></script>
+  <link rel="stylesheet" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css">
+  <link rel="stylesheet" href="https://api.tomtom.com/maps-sdk-for-web/6.x/6.18.0//examples/pages/examples/assets/ui-library/index.css">
+</head>
+<style>
+  
+        .marker-icon {
+            background-position: center;
+            background-size: 45px 45px;
+            border-radius: 50%;
+            height: 22px;
+            left: 4px;
+            position: absolute;
+            text-align: center;
+            top: 4px;
+            transform: rotate(45deg);
+            width: 22px;
+        }
+        .marker {
+            height: 30px;
+            width: 30px;
+        }
+        .marker-content {
+            background: #c30b82;
+            border-radius: 50% 50% 50% 0;
+            height: 30px;
+            left: 50%;
+            margin: -15px 0 0 -15px;
+            position: absolute;
+            top: 50%;
+            transform: rotate(-45deg);
+            width: 30px;
+        }
+        .marker-content::before {
+            background: #ffffff;
+            border-radius: 50%;
+            content: "";
+            height: 24px;
+            margin: 3px 0 0 3px;
+            position: absolute;
+            width: 24px;
+        }
+</style>
+<body>
+  <div id='map' class='map'></div>
+  <script>
+    // Define your product name and version.
+tt.setProductInfo('Codepen Examples', '${analytics.productVersion}');
+var map = tt.map({
+    key: 'Ds4oyxYDLxHnbdhnLkz6sF0l7mrbRzAI',
+    container: 'map',
+    dragPan: !isMobileOrTablet(),
+    center: [24.354449,46.157516],
+    style: 'https://api.tomtom.com/style/1/style/21.1.0-*?map=basic_main&poi=poi_main',
+    zoom: 17
+});
+map.addControl(new tt.FullscreenControl());
+map.addControl(new tt.NavigationControl());
+function createMarker(icon, position, color, popupText) {
+    var markerElement = document.createElement('div');
+    markerElement.className = 'marker';
+    var markerContentElement = document.createElement('div');
+    markerContentElement.className = 'marker-content';
+    markerContentElement.style.backgroundColor = color;
+    markerElement.appendChild(markerContentElement);
+    var iconElement = document.createElement('div');
+    iconElement.className = 'marker-icon';
+    iconElement.style.backgroundImage =
+        'url(images/marker.png)';
+    markerContentElement.appendChild(iconElement);
+    var popup = new tt.Popup({offset: 30}).setText(popupText);
+    // add marker to map
+    new tt.Marker({element: markerElement, anchor: 'bottom'})
+        .setLngLat(position)
+        .setPopup(popup)
+        .addTo(map);
+}
+createMarker('images/marker.png', [24.3541502,46.1570913], '#5327c3', 'Colegiul "Scoala Nationala de Gaz"');
+
+  </script>
+</body>
