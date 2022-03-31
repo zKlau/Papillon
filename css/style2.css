@@ -57,20 +57,6 @@ p {
   text-align: center;
   color: #272727;
 }
-.heading_container1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  color: #dfdbdb;
-}
 
 .heading_container h2 {
   font-weight: bold;
@@ -79,13 +65,13 @@ p {
 /*header section*/
 .hero_area {
   position: relative;
- background: -webkit-gradient(linear, left top, left bottom, from(#0c4b9e), color-stop(#08bd88), to(rgba(0, 0, 0, 0)));
-  background: linear-gradient(to bottom, #0856dd, #5af8de);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0c4b9e), color-stop(#08bd88), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to bottom, #0c4b9e, #08bd88, rgba(0, 0, 0, 0));
 }
 
 .sub_page .header_section {
-  background: -webkit-gradient(linear, left top, right top, from(#0856dd), to(#0ad8ab));
-  background: linear-gradient(to right, #0856dd, #0ad8ab);
+  background: -webkit-gradient(linear, left top, right top, from(#0856dd), to(#3d3e94));
+  background: linear-gradient(to right, #0856dd, #3d3e94);
 }
 
 .sub_page .client_section {
@@ -181,6 +167,20 @@ p {
           flex-grow: 0;
 }
 
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 86, 221, 0.95)), to(rgba(10, 216, 171, 0.95)));
+  background: linear-gradient(to bottom, rgba(8, 86, 221, 0.95), rgba(10, 216, 171, 0.95));
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .overlay .closebtn {
   position: absolute;
   top: 0;
@@ -257,6 +257,17 @@ a:focus {
   width: 105px;
 }
 
+.custom_nav-container .nav_search-btn {
+  background-image: url(../images/search-icon.png);
+  background-size: 18px;
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  background-position: center;
+}
+
 .navbar-brand {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,7 +275,7 @@ a:focus {
 }
 
 .navbar-brand img {
-  width: 100px;
+  width: 60px;
 }
 
 .custom_nav-container {
@@ -323,7 +334,7 @@ a:focus {
 }
 
 .slider_section .detail-box {
-  color: #050505;
+  color: #ffffff;
   margin-top: 75px;
   text-align: center;
   padding: 0 15px;
@@ -362,15 +373,15 @@ a:focus {
 .slider_section .img-box {
   background-image: url(../images/slider-bg.png);
   background-position: bottom;
-  background-size: 101%;
-  padding-bottom: 30%;  /* 375px */
+  background-size: 100%;
+  padding-bottom: 375px;
   position: relative;
   background-repeat: no-repeat;
 }
 
 .slider_section .img-box .play_btn {
-  background: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#050808));
-  background: linear-gradient(to bottom, #ffffff, #13ffcc);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0856dd), to(#0ad8ab));
+  background: linear-gradient(to bottom, #0856dd, #0ad8ab);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -651,7 +662,7 @@ a:focus {
 .package_section .package_container .box .detail-box a:hover {
   background: none;
   color: #ffffff;
-  background: -webkit-gradient(linear, left top, right top, from(#0856dd), to(#0ad8ab));
+  background: -webkit-gradient(linear, left top, right top, from(#3182cb), to(#2eb19c));
   background: linear-gradient(to right, #3182cb, #2eb19c);
 }
 
@@ -666,8 +677,7 @@ a:focus {
 
 .about_section {
   background-image: url(../images/about-bg.png);
-  background-size: 101% 40%;
-  padding-bottom: 10%;
+  background-size: 100% 60%;
   background-repeat: no-repeat;
   background-position: bottom;
   overflow-x: hidden;
@@ -753,11 +763,9 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-  -ms-flex-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-top: 45px;
-  flex-wrap: wrap;
-  align-items: center;
-  flex-direction: column;
 }
 
 .client_section .client_box {
@@ -875,7 +883,7 @@ a:focus {
 }
 
 .info_section .info_logo img {
-  width: 100px;
+  width: 65px;
 }
 
 .info_section .info_top {
@@ -996,7 +1004,7 @@ a:focus {
 .info_section .info_contact .link-box {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: -webkit-inline-box;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1041,21 +1049,3 @@ a:focus {
   color: #000000;
 }
 /*# sourceMappingURL=style.css.map */
-
-.active {
-  background-color: #e1e4ed;
-  color: white;
-}
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  background-color: #262626;
-  padding-left: 8px;
-}
-
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}

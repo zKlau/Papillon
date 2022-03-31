@@ -28,7 +28,25 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
-
+<style>
+  .client-id > .img-box {
+    width: 150px;
+    height: 150px;
+  }
+  .overlay {
+      height: 100%;
+      /*width: 0; */
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 86, 221, 0.95)), to(rgba(10, 216, 171, 0.95)));
+      background: linear-gradient(to bottom, rgba(8, 86, 221, 0.95), rgba(10, 216, 171, 0.95));
+      overflow-x: hidden;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+    }
+</style>
 <body class="sub_page">
   <div class="hero_area">
     <!-- header section strats -->
@@ -37,27 +55,29 @@
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <div class="fk_width" id="">
             <div class="custom_menu-btn">
-              <button onclick="openNav()">
+              <!-- SideMenu -->
+              <button class="dropdown-btn" onclick="openMenu()">
                 <span class="s-1"> </span>
                 <span class="s-2"> </span>
                 <span class="s-3"> </span>
+                <i class="fa fa-caret-down"></i>
               </button>
+              
             </div>
-            <div id="myNav" class="overlay">
+            <div id="myNav" class="overlay" style =  "width: 1px;">
               <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="package.html">Packages</a>
-                <a href="testimonial.html">Testimonial</a>
+                <a href="index.html">Acasa</a>
+                <a href="#about_section">Despre Noi</a>
+                <a href="package.html">Pachete Turistice</a>
               </div>
             </div>
-          </div>
+            </div>
           <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="" />
           </a>
           <div class="user_option">
             <a href="#">
-              <img src="images/user-icon.png" alt="" />
+              <img  alt="" />
             </a>
             <form class="form-inline my-2 my-lg-0  mb-3 mb-lg-0">
               <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
@@ -70,14 +90,14 @@
 
   </div>
   <!-- client section -->
-  <section class="client_section ">
+  <section class="client_section">
     <div class="container">
       <div class="heading_container">
         <h2>
-          What Is Says Our Customer
+          Echipa noastra
         </h2>
         <p>
-          dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          Noi suntem clasa de turism XI de la Colegiul "Scoala Nationala de Gaz"
         </p>
       </div>
     </div>
@@ -89,21 +109,20 @@
               <div class="client_box b-1">
                 <div class="client-id">
                   <div class="img-box">
-                    <img src="images/client-1.jpg" alt="" />
+                    <img src="images/catalin_ivan.jpg" alt="" />
                   </div>
                   <div class="name">
                     <h5>
-                      Alina Jorch
+                      Catalin Ivan
                     </h5>
                     <p>
-                      Tourist
+                      Manager
                     </p>
                   </div>
                 </div>
                 <div class="detail">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum
+                    Eu sunt Catalin Ivan si sunt managerul acestei firme.
                   </p>
                   <div>
                     <div class="arrow_img">
@@ -111,6 +130,37 @@
                   </div>
                 </div>
               </div>
+
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/claudiu_padure.png" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Claudiu Padure
+                    </h5>
+                    <p>
+                      Programator
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Claudiu Padure si lucrez la departamentl de IT al acestei firme.
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+
               <div class="client_box b2">
                 <div class="client-id">
                   <div class="img-box">
@@ -118,18 +168,17 @@
                   </div>
                   <div class="name">
                     <h5>
-                      Carlosh Den
+                      Feri Denis
                     </h5>
                     <p>
-                      Tourist
+                      Programator
                     </p>
 
                   </div>
                 </div>
                 <div class="detail">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum
+                    Eu sunt Feri Denis si sunt de la domeniul de IT al acestei firme.
                   </p>
                   <div>
                     <div class="arrow_img">
@@ -137,37 +186,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container">
-            <div class="client_container ">
-              <div class="client_box b-1">
-                <div class="client-id">
-                  <div class="img-box">
-                    <img src="images/client-1.jpg" alt="" />
-                  </div>
-                  <div class="name">
-                    <h5>
-                      Alina Jorch
-                    </h5>
-                    <p>
-                      Tourist
-                    </p>
-                  </div>
-                </div>
-                <div class="detail">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum
-                  </p>
-                  <div>
-                    <div class="arrow_img">
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <br>
+
               <div class="client_box b2">
                 <div class="client-id">
                   <div class="img-box">
@@ -175,18 +195,17 @@
                   </div>
                   <div class="name">
                     <h5>
-                      Carlosh Den
+                      Susu Georgiana
                     </h5>
                     <p>
-                      Tourist
+                      Resurse Umane
                     </p>
 
                   </div>
                 </div>
                 <div class="detail">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum
+                    Eu sunt Susu si lucrez la resurse umane
                   </p>
                   <div>
                     <div class="arrow_img">
@@ -194,37 +213,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container">
-            <div class="client_container ">
-              <div class="client_box b-1">
-                <div class="client-id">
-                  <div class="img-box">
-                    <img src="images/client-1.jpg" alt="" />
-                  </div>
-                  <div class="name">
-                    <h5>
-                      Alina Jorch
-                    </h5>
-                    <p>
-                      Tourist
-                    </p>
-                  </div>
-                </div>
-                <div class="detail">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum
-                  </p>
-                  <div>
-                    <div class="arrow_img">
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <br>
+
               <div class="client_box b2">
                 <div class="client-id">
                   <div class="img-box">
@@ -232,18 +222,17 @@
                   </div>
                   <div class="name">
                     <h5>
-                      Carlosh Den
+                      Hanzi Patricia
                     </h5>
                     <p>
-                      Tourist
+                      Resurse Umane
                     </p>
 
                   </div>
                 </div>
                 <div class="detail">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrudLorem ipsum
+                    Eu sunt Hanzi Patricia si lucrez la resurse umane
                   </p>
                   <div>
                     <div class="arrow_img">
@@ -251,20 +240,635 @@
                   </div>
                 </div>
               </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Stefan Alex
+                    </h5>
+                    <p>
+                      Resurse Umane
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Stefan Alex si lucrez la resurse umane
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/capu.png" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Barbulea Alin ( Capu )
+                    </h5>
+                    <p>
+                      Resurse Umane
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Capu si lucrez la resurse umane
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Mihet Alexandru
+                    </h5>
+                    <p>
+                      Resurse Umane
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Mihet Alexandru si lucrez la resurse umane
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Marketing
+                    </h5>
+                    <p>
+                      Czika Alexandru
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Czika Alexandru si lucrez la marketing
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Bota Elias
+                    </h5>
+                    <p>
+                      Marketing
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Bota Elias si lucrez la marketing
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Lazar Carmen
+                    </h5>
+                    <p>
+                      Marketing
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Lazar Carmen si lucrez la marketing
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Folea Malvina
+                    </h5>
+                    <p>
+                      Marketing
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Folea Malvina si lucrez la marketing
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Radu Andrei
+                    </h5>
+                    <p>
+                      Marketing
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                   Eu sunt Radu Andrei si lucrez la marketing
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Gundisch Jonathan
+                    </h5>
+                    <p>
+                      Marketing
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Gundisch Jonathan si lucrez la marketing
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Hategan Marius
+                    </h5>
+                    <p>
+                      Relatii Internationale
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Marius Hategan si lucrez la Relatii Internationale 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Stupariu Raul
+                    </h5>
+                    <p>
+                      Relatii Internationale
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Stupariu Raul si lucrez la Relatii Internationale 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Urian Daniel
+                    </h5>
+                    <p>
+                      Relatii Internationale
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Urian Danie si lucrez la Relatii Internationale 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Streza Casian Virgil
+                    </h5>
+                    <p>
+                      Relatii Internationale
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Streza Casian Virgil si lucrez la Relatii Internationale 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Bag Paula
+                    </h5>
+                    <p>
+                      Financiar Contabil
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Bag Paula si lucrez la financiar contabil 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Tutelia Roxana
+                    </h5>
+                    <p>
+                      Financiar Contabil
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Tutelia Roxana si lucrez la financiar contabil 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Bangai Ariana
+                    </h5>
+                    <p>
+                      Financiar Contabil
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Bangai Adriana si lucrez la financiar contabil 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Rau Adriana
+                    </h5>
+                    <p>
+                      Financiar Contabil
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Rau Adriana si lucrez la financiar contabil 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Poenariu Alexandru
+                    </h5>
+                    <p>
+                      Sef Comercial
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Poenariu Alexandru si sunt seful departamentului comercial 
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Son Maria
+                    </h5>
+                    <p>
+                      Achizitii
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Son Maria si lucrez la achizitii
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Son Steluta
+                    </h5>
+                    <p>
+                      Achizitii
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Son Steluta si lucrez la achizitii
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Plesca Vlad
+                    </h5>
+                    <p>
+                      Achizitii
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Plesca Vlad si lucrez la achizitii
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Velicia Daniela
+                    </h5>
+                    <p>
+                      Vanzari
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Velicia Daniela si lucrez la vanzari
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="client_box b2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="images/client-2.jpg" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Guta Cristian
+                    </h5>
+                    <p>
+                      Vanzari
+                    </p>
+
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    Eu sunt Guta Cristian si lucrez la vanzari
+                  </p>
+                  <div>
+                    <div class="arrow_img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+
             </div>
           </div>
         </div>
       </div>
-      <div class="carousel_btn-container">
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+      
     </div>
 
   </section>
@@ -276,37 +880,33 @@
   <section class="info_section ">
     <div class="info_container layout_padding-top">
       <div class="container">
-        <div class="heading_container">
-          <h2>
-            Contact Us
-          </h2>
-        </div>
+        
         <div class="info_logo">
           <img src="images/logo.png" alt="">
         </div>
         <div class="info_top">
           <div class="info_form">
             <form action="">
-              <input type="text" id="email2" placeholder="Enter Your Email">
+              <input type="text" id="email2" placeholder="Va rugam sa va introduceti e-mailul">
               <button>
-                subscribe
+                Aboneaza-te
               </button>
             </form>
           </div>
           <div class="social_box">
-            <a href="#">
+            <a href="https://www.facebook.com/sngmedias">
               <img src="images/facebook.png" alt="">
             </a>
-            <a href="#">
-              <img src="images/twitter.png" alt="">
+            <a href="https://sngmedias.ro">
+              <img src="images/internet.png" width="32px" alt="">
             </a>
             <a href="#">
               <img src="images/linkedin.png" alt="">
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/colegiulsng/">
               <img src="images/instagram.png" alt="">
             </a>
-            <a href="#">
+            <a href="https://www.youtube.com/channel/UC4RXs0NvFbNkak5T1BUOpaA">
               <img src="images/youtube.png" alt="">
             </a>
           </div>
@@ -316,41 +916,41 @@
           <div class="row">
             <div class="col-md-3">
               <h5>
-                About Us
+                Despre Noi
               </h5>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                despre noi
               </p>
             </div>
 
             <div class="col-md-3 col-lg-2 offset-lg-1">
               <h5>
-                Information
+                Informatii
               </h5>
               <ul>
                 <li>
                   <a href="#">
-                    There are many
+                    test1
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    variations of pas
+                    text2
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    sages of Lorem
+                    text3
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    Ipsum available,
+                    text4
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    but the majority
+                    tex5
                   </a>
                 </li>
               </ul>
@@ -358,7 +958,7 @@
             <div class="col-md-3">
               <div class="info_link-box">
                 <h5>
-                  Helpful Links
+                  Linkuri Folositoare
                 </h5>
                 <ul>
                   <li class=" active">
@@ -368,7 +968,7 @@
                     <a class="" href="about.html">About </a>
                   </li>
                   <li class="">
-                    <a class="" href="package.html">Packages </a>
+                    <a class="" href="package.html">Pachete Turistice </a>
                   </li>
                   <li class="">
                     <a class="" href="testimonial.html">Testimonial </a>
@@ -421,7 +1021,20 @@
                     </div>
                     <div class="detail-box">
                       <h6>
-                        Call Now &nbsp; &nbsp; +01 123467890
+                        +0269845867
+                      </h6>
+                    </div>
+                  </a>
+                </div>
+                
+                <div class="col-md-5">
+                  <a href="#" class="link-box">
+                    <div class="img-box">
+                      <img src="images/mail.png" alt="">
+                    </div>
+                    <div class="detail-box">
+                      <h6>
+                        fepapillonsrl@yahoo.com
                       </h6>
                     </div>
                   </a>
@@ -433,19 +1046,7 @@
                     </div>
                     <div class="detail-box">
                       <h6>
-                        Location
-                      </h6>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-5">
-                  <a href="#" class="link-box">
-                    <div class="img-box">
-                      <img src="images/mail.png" alt="">
-                    </div>
-                    <div class="detail-box">
-                      <h6>
-                        demo@gmail.com
+                        Medias, str. Metanului 1 , România
                       </h6>
                     </div>
                   </a>
@@ -465,12 +1066,30 @@
   <!-- footer section -->
   <section class="footer_section ">
     <p>
-      &copy; 2020 All Rights Reserved. Design by
-      <a href="https://html.design/">Free Html Templates</a>
+      &copy; 2022 All Rights Reserved. Design by
+      <a href="https://github.com/zKlau">Claudiu Padure</a>
     </p>
   </section>
-  <!-- footer section -->
+  <script>
 
+    function openMenu() {
+      if (document.querySelector("#myNav").style.width == "") {
+        document.querySelector("#myNav").style.width = "1px";
+      } else {
+        document.querySelector("#myNav").style.width = "";
+      }
+    }
+
+    $(function () {
+     $('#vidBox').VideoPopUp({ 
+      	backgroundColor: "#17212a",
+      	opener: "video1",
+       maxweight: "640",
+       idvideo: "v1"
+     });
+    });
+    
+    </script>
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

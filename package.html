@@ -28,7 +28,31 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
+<style>
+  .overlay {
+    height: 100%;
+    /*width: 0; */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 86, 221, 0.95)), to(rgba(10, 216, 171, 0.95)));
+    background: linear-gradient(to bottom, rgba(8, 86, 221, 0.95), rgba(10, 216, 171, 0.95));
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  h3 {
+    display: flex;
+  }
+  #yt_video iframe {
+    position:absolute;
+    top:20%;
+    left:15%;
+    width:70%; 
+    height:50%;}
 
+</style>
 <body class="sub_page">
   <div class="hero_area">
     <!-- header section strats -->
@@ -37,27 +61,32 @@
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <div class="fk_width" id="">
             <div class="custom_menu-btn">
-              <button onclick="openNav()">
+              <!-- SideMenu -->
+              <button class="dropdown-btn" onclick="openMenu()">
                 <span class="s-1"> </span>
                 <span class="s-2"> </span>
                 <span class="s-3"> </span>
+                <i class="fa fa-caret-down"></i>
               </button>
+              
             </div>
-            <div id="myNav" class="overlay">
+
+
+            <div id="myNav" class="overlay" style =  "width: 1px;">
               <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="package.html">Packages</a>
-                <a href="testimonial.html">Testimonial</a>
+                <a href="index.html">Acasa</a>
+                <a href="#about_section">Despre Noi</a>
+                <a href="package.html">Pachete Turistice</a>
               </div>
             </div>
+
           </div>
           <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="" />
           </a>
           <div class="user_option">
             <a href="#">
-              <img src="images/user-icon.png" alt="" />
+              <img  alt="" />
             </a>
             <form class="form-inline my-2 my-lg-0  mb-3 mb-lg-0">
               <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
@@ -397,7 +426,26 @@
     </p>
   </section>
   <!-- footer section -->
+  <script>
 
+    function openMenu() {
+      if (document.querySelector("#myNav").style.width == "") {
+        document.querySelector("#myNav").style.width = "1px";
+      } else {
+        document.querySelector("#myNav").style.width = "";
+      }
+    }
+
+    $(function () {
+     $('#vidBox').VideoPopUp({ 
+      	backgroundColor: "#17212a",
+      	opener: "video1",
+       maxweight: "640",
+       idvideo: "v1"
+     });
+    });
+    
+    </script>
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
