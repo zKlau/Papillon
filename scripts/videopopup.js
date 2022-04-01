@@ -40,7 +40,7 @@
         $('#' + patter + '').css("background", "rgba(0, 0, 0, 0.438)");
         $('#' + patter + '').css("vertical-align", "vertical-align");
         $("#videCont").css("z-index", "100002");
-        $('#' + patter + '').append('<div id="closer_videopopup" style="font-size: 40px"><img src="images/close.png" style="width:5%%;"></img></div>');
+        $('#' + patter + '').append('<div id="closer_videopopup" style="font-size: 40px"><i class="fa-solid fa-square-xmark"></i></i></div>');
         $("#" + settings.opener + "").on('click', function () {
             $('#' + patter + "").show();
             $('#' + settings.idvideo + '').trigger('play');
