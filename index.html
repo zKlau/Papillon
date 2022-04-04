@@ -76,8 +76,16 @@
 
 
             <div id="myNav" class="overlay" style =  "width: 1px;">
-              
+              <div class="custom_menu-btn" style="padding-left: 25px;">
+                <!-- SideMenu -->
+                <button class="dropdown-btn" onclick="openMenu()">
+                  <span class="s-1"> </span>
+                  <span class="s-2"> </span>
+                  <span class="s-3"> </span>
+                </button>
+              </div>
               <div class="overlay-content">
+                
                 <a href="index.html">Acasa</a>
                 <a href="about.html">Despre Noi</a>
                 <a href="package.html">Pachete Turistice</a>
@@ -117,7 +125,7 @@
         <div class="row">
           <div class="col-md-8 col-lg-6 mx-auto">
             <h1 translate="no">
-              Papillon <br />
+              F.E. Papillon S.R.L <br />
               
             </h1>
             <h1>Agentie de Turism</h1>
@@ -306,7 +314,17 @@
           </div>
         </div>
       </div>
+      <section class="about_section" style="background-image: none;">
+        <div class="heading_container">
+          <div class="btn-box" style="margin-bottom: 0px;">
+            <a href="package.html">
+             Vedeti mai multe
+            </a>
+          </div>
+        </div>
+    </section>
     </div>
+    
   </section>
   <!-- end package section -->
 
@@ -632,7 +650,9 @@
        idvideo: "v1"
      });
     });
-    
+    $(document).ready(function(){
+    $('#v1').hide().delay(3000).fadeIn('slow');
+    });
 
     
     </script>
